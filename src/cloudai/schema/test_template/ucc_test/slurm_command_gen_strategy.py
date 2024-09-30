@@ -73,7 +73,7 @@ class UCCTestSlurmCommandGenStrategy(SlurmCommandGenStrategy):
     def generate_test_command(
         self, slurm_args: Dict[str, Any], env_vars: Dict[str, str], cmd_args: Dict[str, str], extra_cmd_args: str
     ) -> List[str]:
-        srun_command_parts = ["/opt/hpcx/ucc/bin/ucc_perftest"]
+        srun_command_parts = ["/var/lib/resources/bind.sh /opt/hpcx/ucc/bin/ucc_perftest"]
 
         # Add collective, minimum bytes, and maximum bytes options if available
         if "collective" in cmd_args:
